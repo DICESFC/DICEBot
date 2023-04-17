@@ -12,10 +12,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js 18.x
+      - name: Setup Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: "18.x"
+          node-version: "16.x"
       - name: Install Clasp
         run: |
           npm init -y
@@ -23,6 +23,8 @@ jobs:
       - name: Create clasprc.json
         run: |
           echo \{\"token\":\{\"access_token\":\"${{ secrets.CLASP_ACCESS_TOKEN}}\",\"scope\":\"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/script.projects https://www.googleapis.com/auth/script.webapp.deploy https://www.googleapis.com/auth/logging.read openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/script.deployments https://www.googleapis.com/auth/service.management https://www.googleapis.com/auth/cloud-platform\",\"token_type\":\"Bearer\",\"id_token\":\"${{ secrets.CLASP_ID_TOKEN }}\",\"expiry_date\":1620870307822,\"refresh_token\":\"${{ secrets.CLASP_REFRESH_TOKEN }}\"\},\"oauth2ClientSettings\":\{\"clientId\":\"${{ secrets.CLASP_CLIENT_ID }}\",\"clientSecret\":\"${{ secrets.CLASP_CLIENT_SECRET }}\",\"redirectUri\":\"http://localhost\"\},\"isLocalCreds\":false\} > ~/.clasprc.json
+      - name: Test
+          npm run test
       - name: Deploy
         run: |
           clasp push
