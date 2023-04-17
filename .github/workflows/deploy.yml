@@ -29,4 +29,4 @@ jobs:
           npm run test
       - name: Deploy
         run: |
-          clasp push
+          clasp push & clasp deploy -i AKfycbz22LCh69kLjRUtxiJIRAknBlC4RUqj8r7GVc4ID59YPjJRWesOL41vMqeyLV5zEx0seA
