@@ -1,4 +1,4 @@
-import { add } from "../main";
+import { add } from "../src/main";
 
 describe("add関数", () => {
   test("ふつうに足し算", () => {
