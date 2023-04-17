@@ -1,4 +1,4 @@
-name: mainにpushされた内容をBuild & Deployしてくれるいい子
+name: mainにpushされた内容を自動でデプロイ
 
 on:
   push:
@@ -27,6 +27,9 @@ jobs:
       - name: Test
         run: |
           npm run test
+      - name: Push
+        run: |
+          clasp push -f
       - name: Deploy
         run: |
-          clasp push & clasp deploy -i AKfycbz22LCh69kLjRUtxiJIRAknBlC4RUqj8r7GVc4ID59YPjJRWesOL41vMqeyLV5zEx0seA
+          clasp deploy -i AKfycbz22LCh69kLjRUtxiJIRAknBlC4RUqj8r7GVc4ID59YPjJRWesOL41vMqeyLV5zEx0seA
