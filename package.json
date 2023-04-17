@@ -1,0 +1,22 @@
+{
+  "name": "dicebot",
+  "version": "1.0.0",
+  "description": "DICEのSlack管理用Botです。GAS / Claspを使用。",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DICESFC/DICEBot.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DICESFC/DICEBot/issues"
+  },
+  "homepage": "https://github.com/DICESFC/DICEBot#readme",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.60"
+  }
+}
