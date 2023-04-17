@@ -1,5 +1,5 @@
 function main() {
-  console.log("変更テスト2");
+  console.log("変更テスト3");
 }
 
 export const add = (a: number, b: number) => {
